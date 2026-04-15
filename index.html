@@ -1,418 +1,369 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CECYTE BC LA PRESA — Herramientas para Alumnos</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Merriweather+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&amp;family=Merriweather+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&amp;display=swap" rel="stylesheet"/>
+<link href="estilo.css" rel="stylesheet"/>
 </head>
 <body>
-
-<!-- INSTITUTIONAL BAR -->
 <div class="inst-bar">
-  <div class="inst-bar-logos">
-    <img src="/cecytebc_horizontal.png" alt="CECyTE Baja California">
-  </div>
-  <div class="inst-bar-title">Herramientas para Alumnos</div>
+<div class="inst-bar-logos">
+<img alt="CECyTE Baja California" src="img/cecytebc_horizontal.png"/>
 </div>
-
-<!-- NAV -->
+<div class="inst-bar-title">Herramientas para Alumnos</div>
+</div>
 <nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="#">
-      <div class="logo-badge">C</div>
-      CECYTE BC
+<div class="nav-inner">
+<a class="nav-logo" href="#">
+<div class="logo-badge">BC</div>
+      CECYTE LA PRESA
     </a>
-    <ul class="nav-links">
-      <li><a href="#semestre">Mi Semestre</a></li>
-      <li><a href="#tramites">Trámites</a></li>
-      <li><a href="#receptora">Unidad Receptora</a></li>
-      <li><a href="#mantenimiento">Mantenimiento</a></li>
-      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
-    </ul>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<ul class="nav-links">
+<li><a href="#semestre">Mi Semestre</a></li>
+<li><a href="#tramites">Trámites</a></li>
+<li><a href="#receptora">Unidad Receptora</a></li>
+<li><a href="#mantenimiento">Mantenimiento</a></li>
+<li><a class="nav-cta" href="#contacto">Contacto</a></li>
+</ul>
+<button aria-label="Menú" class="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button>
+</div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#semestre" onclick="toggleMenu()">Mi Semestre</a>
-  <a href="#tramites" onclick="toggleMenu()">Trámites</a>
-  <a href="#receptora" onclick="toggleMenu()">Unidad Receptora</a>
-  <a href="#mantenimiento" onclick="toggleMenu()">Mantenimiento</a>
-  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+<a href="#semestre" onclick="toggleMenu()">Mi Semestre</a>
+<a href="#tramites" onclick="toggleMenu()">Trámites</a>
+<a href="#receptora" onclick="toggleMenu()">Unidad Receptora</a>
+<a href="#mantenimiento" onclick="toggleMenu()">Mantenimiento</a>
+<a href="#contacto" onclick="toggleMenu()">Contacto</a>
 </div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-blob1"></div>
-  <div class="hero-blob2"></div>
-  <div class="hero-blob3"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner container">
-    <div class="hero-text">
-      <div class="hero-tag">
-        <span></span>
+<header class="hero" id="inicio">
+<div class="hero-overlay"></div>
+<div class="hero-grid"></div>
+<div class="container hero-inner">
+<div class="hero-text">
+<div class="hero-tag">
+<span></span>
         Herramientas para Alumnos
       </div>
-      <h1 class="hero-title">
-        Todo lo que<br>necesitas para tu <em>futuro</em>
+<h1 class="hero-title">
+        Tu camino al <em>éxito profesional</em> comienza hoy.
       </h1>
-      <p class="hero-desc">
-        Accede fácilmente a los trámites de Servicio Social y Prácticas Profesionales del CECYTE Baja California. Encuentra tu unidad receptora y más.
+<p class="hero-desc">
+        Descubre todas las herramientas y convenios que CECYTE Baja California pone a tu disposición para potenciar tu talento técnico.
       </p>
-      <div class="hero-btns">
-        <a href="#semestre" class="btn-white">¿Qué semestre soy?</a>
-        <a href="#tramites" class="btn-ghost">Ver trámites →</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-card-icon">📋</div>
-        <div class="hero-card-text">
-          <strong>Servicio Social</strong>
-          <span>1° a 4° semestre</span>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-icon">🎓</div>
-        <div class="hero-card-text">
-          <strong>Prácticas Profesionales</strong>
-          <span>5° a 6° semestre</span>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-icon">🏢</div>
-        <div class="hero-card-text">
-          <strong>Unidades Receptoras</strong>
-          <span>Empresas y dependencias</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
+<div class="hero-btns">
+<a class="btn-white" href="#semestre">¿Qué semestre soy?</a>
+<a class="btn-ghost" href="#tramites">Ver trámites →</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-card">
+<div class="hero-card-icon">🎯</div>
+<div class="hero-card-text">
+<strong>Vinculación Directa</strong>
+<span>+150 convenios activos</span>
+</div>
+</div>
+<div class="hero-card">
+<div class="hero-card-icon">⚡</div>
+<div class="hero-card-text">
+<strong>Proceso Digital</strong>
+<span>Trámites 100% optimizados</span>
+</div>
+</div>
+<div class="hero-card">
+<div class="hero-card-icon">🛡️</div>
+<div class="hero-card-text">
+<strong>Apoyo Constante</strong>
+<span>Asesoría personalizada</span>
+</div>
+</div>
+</div>
+</div>
+</header>
 <div class="checker-strip">
-  <div class="checker-inner">
-    <div class="checker-item"><span class="checker-dot"></span>Servicio Social</div>
-    <div class="checker-item"><span class="checker-dot"></span>Prácticas Profesionales</div>
-    <div class="checker-item"><span class="checker-dot"></span>Unidad Receptora</div>
-    <div class="checker-item"><span class="checker-dot"></span>Mantenimiento CECYTE</div>
-    <div class="checker-item"><span class="checker-dot"></span>Baja California</div>
-    <div class="checker-item"><span class="checker-dot"></span>Servicio Social</div>
-    <div class="checker-item"><span class="checker-dot"></span>Prácticas Profesionales</div>
-    <div class="checker-item"><span class="checker-dot"></span>Unidad Receptora</div>
-    <div class="checker-item"><span class="checker-dot"></span>Mantenimiento CECYTE</div>
-    <div class="checker-item"><span class="checker-dot"></span>Baja California</div>
-  </div>
+<div class="checker-inner">
+<div class="checker-item"><span class="checker-dot"></span>Servicio Social</div>
+<div class="checker-item"><span class="checker-dot"></span>Prácticas Profesionales</div>
+<div class="checker-item"><span class="checker-dot"></span>Unidad Receptora</div>
+<div class="checker-item"><span class="checker-dot"></span>Mantenimiento CECYTE</div>
+<div class="checker-item"><span class="checker-dot"></span>Baja California</div>
+<!-- Duplicate for smooth loop -->
+<div class="checker-item"><span class="checker-dot"></span>Servicio Social</div>
+<div class="checker-item"><span class="checker-dot"></span>Prácticas Profesionales</div>
+<div class="checker-item"><span class="checker-dot"></span>Unidad Receptora</div>
+<div class="checker-item"><span class="checker-dot"></span>Mantenimiento CECYTE</div>
+<div class="checker-item"><span class="checker-dot"></span>Baja California</div>
 </div>
-
-<!-- SEMESTRE SELECTOR -->
-<section class="semestre-section section-pad" id="semestre">
-  <div class="container">
-    <div class="section-label">¿Qué te corresponde?</div>
-    <h2 class="section-title">Identifica tu <span>modalidad</span></h2>
-    <p class="section-desc">Dependiendo del semestre en que te encuentres, te corresponde Servicio Social o Prácticas Profesionales.</p>
-
-    <div class="semestre-wrap">
-      <div class="semestre-card ss fade-up" onclick="openModal('ss')">
-        <div class="semestre-badge">1° — 4° semestre</div>
-        <div class="semestre-number">SS</div>
-        <div class="card-title">Servicio Social</div>
-        <p class="card-desc">Alumnos de primero a cuarto semestre realizan actividades de apoyo comunitario e institucional que contribuyen a su formación integral.</p>
-        <div class="semestre-arrow">Ver requisitos y pasos →</div>
-      </div>
-
-      <div class="semestre-card pp fade-up" onclick="openModal('pp')">
-        <div class="semestre-badge">5° — 6° semestre</div>
-        <div class="semestre-number">PP</div>
-        <div class="card-title">Prácticas Profesionales</div>
-        <p class="card-desc">Alumnos de quinto y sexto semestre aplican los conocimientos adquiridos en su carrera dentro de empresas o dependencias reales.</p>
-        <div class="semestre-arrow">Ver requisitos y pasos →</div>
-      </div>
-    </div>
-  </div>
+</div>
+<section class="section-pad" id="semestre">
+<div class="container">
+<div class="section-label">¿Qué te corresponde?</div>
+<h2 class="section-title">Identifica tu <span>modalidad</span></h2>
+<p class="section-desc">Dependiendo del semestre en que te encuentres, te corresponde Servicio Social o Prácticas Profesionales.</p>
+<div class="semestre-wrap">
+<div class="semestre-card fade-up" onclick="openModal('ss')">
+<div class="semestre-badge">1° — 4° semestre</div>
+<div class="semestre-number">SS</div>
+<div class="card-title">Servicio Social</div>
+<p class="card-desc">Contribuye a tu comunidad y desarrolla habilidades blandas esenciales para tu futuro laboral.</p>
+<div class="semestre-arrow">Ver requisitos y pasos →</div>
+</div>
+<div class="semestre-card fade-up" onclick="openModal('pp')">
+<div class="semestre-badge">5° — 6° semestre</div>
+<div class="semestre-number">PP</div>
+<div class="card-title">Prácticas Profesionales</div>
+<p class="card-desc">Insértate en el mundo real de las empresas y aplica tus conocimientos técnicos de primer nivel.</p>
+<div class="semestre-arrow">Ver requisitos y pasos →</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- TRÁMITES -->
-<section class="section-pad" id="tramites" style="background: var(--offwhite);">
-  <div class="container">
-    <div class="section-label">Documentación</div>
-    <h2 class="section-title">Trámites y <span>documentos</span></h2>
-    <p class="section-desc">Aquí encontrarás todo lo que necesitas para iniciar tus trámites de forma rápida y sencilla.</p>
-
-    <div class="info-grid">
-      <div class="info-card fade-up">
-        <div class="info-card-icon">📄</div>
-        <h3>Carta de Presentación</h3>
-        <p>Documento oficial que CECYTE BC emite para acreditar tu estancia en la empresa o institución receptora.</p>
-        <a href="#" class="info-card-link">Solicitar carta →</a>
-      </div>
-      <div class="info-card fade-up">
-        <div class="info-card-icon">📝</div>
-        <h3>Plan de Trabajo</h3>
-        <p>Formato donde describes las actividades que realizarás durante tu periodo de servicio o prácticas.</p>
-        <a href="#" class="info-card-link">Descargar formato →</a>
-      </div>
-      <div class="info-card fade-up">
-        <div class="info-card-icon">✅</div>
-        <h3>Reporte Bimestral</h3>
-        <p>Informe de avance que debes entregar cada dos meses para acreditar el avance de tus actividades.</p>
-        <a href="#" class="info-card-link">Ver ejemplo →</a>
-      </div>
-      <div class="info-card fade-up">
-        <div class="info-card-icon">🏆</div>
-        <h3>Carta de Liberación</h3>
-        <p>Documento final que emite la unidad receptora al concluir satisfactoriamente tus horas requeridas.</p>
-        <a href="#" class="info-card-link">Más información →</a>
-      </div>
-      <div class="info-card fade-up">
-        <div class="info-card-icon">⏱️</div>
-        <h3>Control de Horas</h3>
-        <p>Registro oficial de las horas acumuladas. Requieres 240 horas para SS y 300 horas para Prácticas.</p>
-        <a href="#" class="info-card-link">Descargar bitácora →</a>
-      </div>
-      <div class="info-card fade-up">
-        <div class="info-card-icon">🔔</div>
-        <h3>Fechas y Convocatorias</h3>
-        <p>Consulta los periodos vigentes, fechas límite de entrega de documentos y convocatorias activas.</p>
-        <a href="#" class="info-card-link">Ver calendario →</a>
-      </div>
-    </div>
-  </div>
+<section class="section-pad" id="tramites" style="background: rgba(139,29,46,0.02);">
+<div class="container">
+<div class="section-label">Documentación</div>
+<h2 class="section-title">Trámites <span>Sin Complicaciones</span></h2>
+<p class="section-desc">Aquí encontrarás todo lo que necesitas para iniciar tus trámites de forma rápida y sencilla.</p>
+<div class="info-grid">
+<div class="info-card fade-up">
+<div class="info-card-icon">📄</div>
+<h3>Carta de Presentación</h3>
+<p>El primer paso para tu inserción en la unidad receptora. Solicítala aquí de forma ágil.</p>
+<a class="info-card-link" href="#">Solicitar carta →</a>
+</div>
+<div class="info-card fade-up">
+<div class="info-card-icon">📈</div>
+<h3>Reporte Bimestral</h3>
+<p>Lleva el control de tus actividades y asegura la validación de tus horas de servicio.</p>
+<a class="info-card-link" href="#">Descargar formato →</a>
+</div>
+<div class="info-card fade-up">
+<div class="info-card-icon">🏅</div>
+<h3>Liberación</h3>
+<p>Culmina tu proceso satisfactoriamente y obtén tu certificado oficial de cumplimiento.</p>
+<a class="info-card-link" href="#">Ver requisitos →</a>
+</div>
+<div class="info-card fade-up">
+<div class="info-card-icon">⏱️</div>
+<h3>Control de Horas</h3>
+<p>Registro oficial de las horas acumuladas. Requieres 240 horas para SS y 300 horas para PP.</p>
+<a class="info-card-link" href="#">Descargar bitácora →</a>
+</div>
+<div class="info-card fade-up">
+<div class="info-card-icon">📝</div>
+<h3>Plan de Trabajo</h3>
+<p>Formato donde describes las actividades que realizarás durante tu estancia técnica.</p>
+<a class="info-card-link" href="#">Ver ejemplo →</a>
+</div>
+<div class="info-card fade-up">
+<div class="info-card-icon">🔔</div>
+<h3>Convocatorias</h3>
+<p>Consulta los periodos vigentes, fechas límite de entrega y calendarios de vinculación.</p>
+<a class="info-card-link" href="#">Ver fechas →</a>
+</div>
+</div>
+</div>
 </section>
-
-<!-- UNIDAD RECEPTORA -->
 <section class="receptora-section section-pad" id="receptora">
-  <div class="container">
-    <div class="receptora-grid">
-      <div class="receptora-visual">
-        <div class="receptora-main-card">
-          <h3>Unidades Receptoras</h3>
-          <p>Empresas, instituciones públicas y organizaciones de Baja California que aceptan alumnos de CECYTE.</p>
-          <div class="counter-row">
-            <div class="counter-item"><span class="num">120+</span><span class="lbl">Empresas registradas</span></div>
-            <div class="counter-item"><span class="num">18</span><span class="lbl">Municipios</span></div>
-            <div class="counter-item"><span class="num">6</span><span class="lbl">Sectores</span></div>
-          </div>
-        </div>
-        <div class="receptora-float">
-          <span class="dot"></span>
-          <span>Convenios activos</span>
-        </div>
-      </div>
-
-      <div class="receptora-list">
-        <div class="section-label" style="margin-bottom:0.75rem;">¿Dónde puedo ir?</div>
-        <h2 class="section-title" style="margin-bottom:1rem;">Elige tu <span>lugar ideal</span></h2>
-        <p class="section-desc" style="margin-bottom:1.5rem;">Consulta el catálogo de unidades receptoras disponibles según tu carrera y municipio.</p>
-
-        <div class="receptora-item fade-up">
-          <div class="receptora-num">01</div>
-          <div>
-            <h4>Sector Gobierno y Dependencias</h4>
-            <p>Ayuntamientos, IMSS, ISSSTE, Secretarías estatales y municipales de Baja California.</p>
-          </div>
-        </div>
-        <div class="receptora-item fade-up">
-          <div class="receptora-num">02</div>
-          <div>
-            <h4>Empresas Privadas</h4>
-            <p>Maquiladoras, comercios, despachos contables, clínicas privadas y más sectores.</p>
-          </div>
-        </div>
-        <div class="receptora-item fade-up">
-          <div class="receptora-num">03</div>
-          <div>
-            <h4>Organizaciones No Gubernamentales</h4>
-            <p>Fundaciones y asociaciones civiles con convenio vigente con CECYTE BC.</p>
-          </div>
-        </div>
-        <div class="receptora-item fade-up">
-          <div class="receptora-num">04</div>
-          <div>
-            <h4>Proponer una Nueva Unidad</h4>
-            <p>Si conoces una empresa interesada, puedes tramitar su registro como unidad receptora.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="receptora-grid">
+<div class="receptora-visual">
+<div class="receptora-main-card">
+<h3>Unidades Receptoras</h3>
+<p>Empresas, instituciones públicas y organizaciones de Baja California que aceptan alumnos de CECYTE.</p>
+<div class="counter-row">
+<div class="counter-item"><span class="num">120+</span><span class="lbl">Convenios</span></div>
+<div class="counter-item"><span class="num">18</span><span class="lbl">Municipios</span></div>
+<div class="counter-item"><span class="num">6</span><span class="lbl">Sectores</span></div>
+</div>
+</div>
+</div>
+<div class="receptora-list">
+<div class="section-label" style="color:var(--secondary);">¿Dónde puedo ir?</div>
+<h2 class="section-title" style="color:white; margin-bottom:1rem;">Elige tu <span>lugar ideal</span></h2>
+<p class="section-desc" style="color:rgba(255,255,255,0.7); margin-bottom:1.5rem;">Consulta el catálogo de unidades disponibles según tu carrera y ubicación.</p>
+<div class="receptora-item fade-up">
+<div class="receptora-num">01</div>
+<div>
+<h4>Sector Gobierno y Salud</h4>
+<p>Ayuntamientos, IMSS, ISSSTE, Secretarías estatales y dependencias municipales.</p>
+</div>
+</div>
+<div class="receptora-item fade-up">
+<div class="receptora-num">02</div>
+<div>
+<h4>Empresas e Industria</h4>
+<p>Maquiladoras, comercios locales, despachos contables y clínicas privadas.</p>
+</div>
+</div>
+<div class="receptora-item fade-up">
+<div class="receptora-num">03</div>
+<div>
+<h4>Organizaciones Civiles</h4>
+<p>Fundaciones y asociaciones civiles con convenio vigente con CECYTE BC.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- MANTENIMIENTO -->
 <section class="mant-section section-pad" id="mantenimiento">
-  <div class="container">
-    <div class="mant-header">
-      <div>
-        <div class="section-label">Plantel</div>
-        <h2 class="section-title">Mantenimiento <span>CECYTE BC</span></h2>
-        <p class="section-desc" style="margin-bottom:0;">Reporte averías, consulta el estado de las instalaciones y solicita atención técnica en tu plantel.</p>
-      </div>
-    </div>
-
-    <div class="mant-grid">
-      <div class="mant-card fade-up">
-        <div class="mant-card-top orange">⚡</div>
-        <div class="mant-card-body">
-          <h4>Instalaciones Eléctricas</h4>
-          <p>Fallas en alumbrado, contactos o tableros eléctricos del plantel.</p>
-          <span class="mant-status ok">Operando</span>
-        </div>
-      </div>
-      <div class="mant-card fade-up">
-        <div class="mant-card-top pale">🚿</div>
-        <div class="mant-card-body">
-          <h4>Sanitarios y Plomería</h4>
-          <p>Reporte de fugas, obstrucciones y servicios sanitarios.</p>
-          <span class="mant-status warn">1 reporte activo</span>
-        </div>
-      </div>
-      <div class="mant-card fade-up">
-        <div class="mant-card-top dark">🖥️</div>
-        <div class="mant-card-body">
-          <h4>Laboratorio de Cómputo</h4>
-          <p>Equipos, red, proyectores y periféricos del laboratorio.</p>
-          <span class="mant-status ok">Sin reportes</span>
-        </div>
-      </div>
-      <div class="mant-card fade-up">
-        <div class="mant-card-top orange">🏗️</div>
-        <div class="mant-card-body">
-          <h4>Infraestructura Civil</h4>
-          <p>Aulas, techos, puertas, ventanas y estructura general.</p>
-          <span class="mant-status info">En revisión</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="mant-report">
-      <div class="mant-report-text">
-        <h3>¿Detectaste alguna falla?</h3>
-        <p>Notifica al departamento de mantenimiento llenando el formulario de reporte. Tu aviso ayuda a mantener el plantel en óptimas condiciones para toda la comunidad estudiantil.</p>
-      </div>
-      <a href="#" class="btn-orange">Reportar una falla</a>
-    </div>
-  </div>
+<div class="container">
+<div class="mant-header">
+<div class="section-label">Plantel</div>
+<h2 class="section-title">Mantenimiento <span>CECYTE BC</span></h2>
+<p class="section-desc">Reporte averías, consulta el estado de las instalaciones y solicita atención técnica en tu plantel.</p>
+</div>
+<div class="mant-grid">
+<div class="mant-card fade-up">
+<div class="mant-card-top orange">⚡</div>
+<div class="mant-card-body">
+<h4>Instalaciones Eléctricas</h4>
+<p>Fallas en alumbrado, contactos o tableros eléctricos del plantel.</p>
+<span class="mant-status ok">Operando</span>
+</div>
+</div>
+<div class="mant-card fade-up">
+<div class="mant-card-top pale">🚿</div>
+<div class="mant-card-body">
+<h4>Sanitarios y Plomería</h4>
+<p>Reporte de fugas, obstrucciones y servicios sanitarios.</p>
+<span class="mant-status warn">1 reporte activo</span>
+</div>
+</div>
+<div class="mant-card fade-up">
+<div class="mant-card-top dark">🖥️</div>
+<div class="mant-card-body">
+<h4>Laboratorio de Cómputo</h4>
+<p>Equipos, red, proyectores y periféricos del laboratorio.</p>
+<span class="mant-status ok">Sin reportes</span>
+</div>
+</div>
+<div class="mant-card fade-up">
+<div class="mant-card-top orange">🏗️</div>
+<div class="mant-card-body">
+<h4>Infraestructura Civil</h4>
+<p>Aulas, techos, puertas, ventanas y estructura general.</p>
+<span class="mant-status info">En revisión</span>
+</div>
+</div>
+</div>
+<div class="mant-report">
+<div class="mant-report-text">
+<h3>¿Detectaste alguna falla?</h3>
+<p>Notifica al departamento de mantenimiento llenando el formulario de reporte. Tu aviso ayuda a mantener el plantel en óptimas condiciones.</p>
+</div>
+<a class="btn-orange" href="#">Reportar una falla</a>
+</div>
+</div>
 </section>
-
-<!-- CONTACT -->
-<section class="section-pad" id="contacto" style="background:var(--gray-light);">
-  <div class="container" style="text-align:center; max-width:640px;">
-    <div class="section-label" style="justify-content:center;">¿Tienes dudas?</div>
-    <h2 class="section-title">Estamos aquí <span>para ayudarte</span></h2>
-    <p class="section-desc" style="margin:0 auto 2rem; text-align:center;">Comunícate con el departamento de Vinculación de tu plantel o consulta a tu tutor asignado.</p>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="mailto:vinculacion@cecytebc.edu.mx" class="btn-orange">✉️ Escribir al departamento</a>
-      <a href="tel:6641234567" class="btn-ghost" style="background:white;color:var(--orange-deep);border:2px solid rgba(200,150,12,0.25);font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;padding:13px 28px;border-radius:10px;text-decoration:none;display:inline-block;transition:all 0.25s;">📞 Llamar al plantel</a>
-    </div>
-  </div>
+<section class="section-pad" id="contacto" style="background:var(--white);">
+<div class="container" style="text-align:center;">
+<div class="section-label" style="justify-content:center;">Atención Estudiantil</div>
+<h2 class="section-title">Estamos aquí <span>para ayudarte</span></h2>
+<p class="section-desc" style="margin: 0 auto 3rem;">Comunícate con el departamento de Vinculación de tu plantel o consulta a tu tutor asignado.</p>
+<div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+<a class="btn-orange" href="mailto:vinculacion@cecytebc.edu.mx">✉️ Escribir al departamento</a>
+<a class="btn-ghost" href="tel:6641234567" style="color:var(--primary); border-color:var(--primary);">📞 Llamar al plantel</a>
+</div>
+</div>
 </section>
-
-<!-- FOOTER -->
-<footer id="contacto2">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="nav-logo" href="#">
-          <div class="logo-badge">C</div>
-          CECYTE BC
-        </a>
-        <p>Colegio de Estudios Científicos y Tecnológicos del Estado de Baja California. Formando líderes con calidad y compromiso social.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Alumnos</h5>
-        <ul>
-          <li><a href="#semestre">Mi semestre</a></li>
-          <li><a href="#tramites">Documentos</a></li>
-          <li><a href="#receptora">Unidad receptora</a></li>
-          <li><a href="#mantenimiento">Mantenimiento</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Institución</h5>
-        <ul>
-          <li><a href="#">Portal CECYTE</a></li>
-          <li><a href="#">Planteles</a></li>
-          <li><a href="#">Avisos</a></li>
-          <li><a href="#">Contáctanos</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 CECYTE Baja California — Todos los derechos reservados</p>
-      <p style="color:rgba(255,255,255,0.2);">Tijuana · Mexicali · Ensenada · Tecate</p>
-    </div>
-  </div>
+<footer>
+<div class="container footer-grid">
+<div class="footer-brand">
+<a class="nav-logo" href="#" style="color:white;">
+<div class="logo-badge">BC</div>
+        CECYTE LA PRESA
+      </a>
+<p>Comprometidos con la formación técnica integral de los jóvenes de Tijuana, conectando el talento con las mejores oportunidades.</p>
+</div>
+<div class="footer-col">
+<h5>Alumnos</h5>
+<ul>
+<li><a href="#semestre">Mi semestre</a></li>
+<li><a href="#tramites">Documentos</a></li>
+<li><a href="#receptora">Unidad receptora</a></li>
+<li><a href="#mantenimiento">Mantenimiento</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Institución</h5>
+<ul>
+<li><a href="#">Portal CECYTE</a></li>
+<li><a href="#">Planteles</a></li>
+<li><a href="#">Avisos</a></li>
+<li><a href="#">Privacidad</a></li>
+</ul>
+</div>
+</div>
+<div class="container footer-bottom">
+<p>© 2026 CECYTE Baja California - Todos los derechos reservados.</p>
+<p>Excelencia Educativa con Sentido Humano</p>
+</div>
 </footer>
-
-<!-- MODAL SS -->
+<!-- MODALS -->
 <div class="modal-overlay" id="modalSS" onclick="closeModal(event,'modalSS')">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('modalSS').classList.remove('open')">✕</button>
-    <div style="display:inline-block;background:var(--orange-pale);border-radius:8px;padding:6px 14px;font-size:0.75rem;font-weight:800;color:var(--orange-deep);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.75rem;font-family:'Nunito',sans-serif;">1° – 4° Semestre</div>
-    <h2>Servicio Social</h2>
-    <p class="modal-sub">Conoce los pasos para iniciar y concluir tu Servicio Social en CECYTE BC.</p>
-    <div class="modal-steps">
-      <div class="modal-step">
-        <div class="step-num">1</div>
-        <div><h4>Solicita la carta de presentación</h4><p>Acércate al Departamento de Vinculación de tu plantel con tu número de matrícula.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">2</div>
-        <div><h4>Elige tu unidad receptora</h4><p>Consulta el catálogo de empresas e instituciones disponibles con convenio vigente.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">3</div>
-        <div><h4>Elabora tu plan de trabajo</h4><p>Con apoyo de tu tutor, define las actividades que realizarás durante las 240 horas.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">4</div>
-        <div><h4>Entrega reportes bimestrales</h4><p>Reporta tu avance cada dos meses al Departamento de Vinculación.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">5</div>
-        <div><h4>Obtén la carta de liberación</h4><p>Al completar las 240 horas, solicita la carta de liberación firmada y sellada.</p></div>
-      </div>
-    </div>
-  </div>
+<div class="modal">
+<button class="modal-close" onclick="document.getElementById('modalSS').classList.remove('open')">✕</button>
+<div class="semestre-badge">1° — 4° SEMESTRE</div>
+<h2>Servicio Social</h2>
+<p class="modal-sub">Contribuye a tu comunidad y desarrolla habilidades blandas esenciales.</p>
+<div class="modal-steps">
+<div class="modal-step">
+<div class="step-num">1</div>
+<div><h4>Carta de presentación</h4><p>Solicítala en Vinculación con tu número de matrícula.</p></div>
 </div>
-
-<!-- MODAL PP -->
+<div class="modal-step">
+<div class="step-num">2</div>
+<div><h4>Elección de unidad</h4><p>Selecciona una institución del catálogo con convenio.</p></div>
+</div>
+<div class="modal-step">
+<div class="step-num">3</div>
+<div><h4>Plan de Trabajo</h4><p>Define las actividades junto a tu tutor para tus 240 horas.</p></div>
+</div>
+<div class="modal-step">
+<div class="step-num">4</div>
+<div><h4>Reportes</h4><p>Entrega tus informes bimestrales para validar tu avance.</p></div>
+</div>
+<div class="modal-step">
+<div class="step-num">5</div>
+<div><h4>Liberación</h4><p>Obtén tu certificado tras completar satisfactoriamente el periodo.</p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="modal-overlay" id="modalPP" onclick="closeModal(event,'modalPP')">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('modalPP').classList.remove('open')">✕</button>
-    <div style="display:inline-block;background:linear-gradient(135deg,var(--orange),var(--orange-deep));border-radius:8px;padding:6px 14px;font-size:0.75rem;font-weight:800;color:white;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.75rem;font-family:'Nunito',sans-serif;">5° – 6° Semestre</div>
-    <h2>Prácticas Profesionales</h2>
-    <p class="modal-sub">Sigue estos pasos para completar tus Prácticas Profesionales en CECYTE BC.</p>
-    <div class="modal-steps">
-      <div class="modal-step">
-        <div class="step-num">1</div>
-        <div><h4>Verifica que cursas 5° o 6°</h4><p>Las Prácticas Profesionales se realizan en los dos últimos semestres de tu carrera técnica.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">2</div>
-        <div><h4>Solicita tu carta al plantel</h4><p>El Departamento de Vinculación emitirá tu carta de presentación oficial.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">3</div>
-        <div><h4>Selecciona la empresa</h4><p>Elige una empresa del catálogo relacionada con tu especialidad técnica.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">4</div>
-        <div><h4>Cumple las 300 horas</h4><p>Registra tu asistencia diariamente y mantén comunicación con tu asesor en el plantel.</p></div>
-      </div>
-      <div class="modal-step">
-        <div class="step-num">5</div>
-        <div><h4>Presenta tu informe final</h4><p>Elabora y entrega el informe técnico de las actividades realizadas para obtener la liberación.</p></div>
-      </div>
-    </div>
-  </div>
+<div class="modal">
+<button class="modal-close" onclick="document.getElementById('modalPP').classList.remove('open')">✕</button>
+<div class="semestre-badge" style="background:var(--secondary); color:white;">5° — 6° SEMESTRE</div>
+<h2>Prácticas Profesionales</h2>
+<p class="modal-sub">Insértate en el mundo real de las empresas y aplica tus conocimientos técnicos.</p>
+<div class="modal-steps">
+<div class="modal-step">
+<div class="step-num">1</div>
+<div><h4>Estatus Académico</h4><p>Verifica que cursas el 5° o 6° semestre de tu carrera técnica.</p></div>
 </div>
-
+<div class="modal-step">
+<div class="step-num">2</div>
+<div><h4>Vinculación Empresarial</h4><p>Elige una empresa del sector industrial o comercial afin a tu carrera.</p></div>
+</div>
+<div class="modal-step">
+<div class="step-num">3</div>
+<div><h4>Acreditación</h4><p>Registra tus 300 horas de práctica en el sector productivo.</p></div>
+</div>
+<div class="modal-step">
+<div class="step-num">4</div>
+<div><h4>Informe Final</h4><p>Presenta un reporte técnico detallado de las actividades realizadas.</p></div>
+</div>
+<div class="modal-step">
+<div class="step-num">5</div>
+<div><h4>Certificación</h4><p>Recibe tu carta de liberación avalada por la unidad receptora.</p></div>
+</div>
+</div>
+</div>
+</div>
 <script src="javascript.js"></script>
-</body>
-</html>
+</body></html>
