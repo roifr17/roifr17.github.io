@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memorama</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f5f0e8;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 48px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: #2c2c2c;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #999;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* HUD */
+  .hud {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hud-box {
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 12px;
+    padding: 10px 22px;
+    text-align: center;
+    min-width: 90px;
+  }
+
+  .hud-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #bbb;
+    font-weight: 500;
+  }
+
+  .hud-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: #2c2c2c;
+    line-height: 1.1;
+  }
+
+  /* Board */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Card */
+  .card {
+    aspect-ratio: 3/4;
+    perspective: 900px;
+    cursor: pointer;
+    animation: appear 0.35s ease both;
+  }
+
+  @keyframes appear {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card.flipped .card-inner,
+  .card.matched .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Back */
+  .card-back {
+    background: #fff;
+    border: 2px solid #e8e0d4;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .card-back .back-icon {
+    font-size: 36px;
+    opacity: 0.18;
+  }
+
+  .card:not(.flipped):not(.matched):hover .card-back {
+    border-color: #c8b89a;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Front */
+  .card-front {
+    background: #fff;
+    border: 2px solid #e8e0d4;
+    transform: rotateY(180deg);
+  }
+
+  .card-front .card-emoji img {
+    font-size: clamp(42px, 7vw, 60px);
+    line-height: 1;
+    width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  border-radius: 12px;
+
+  }
+
+  .card-front .card-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #bbb;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Matched */
+  .card.matched .card-front {
+    background: #f0faf2;
+    border-color: #72c78a;
+  }
+
+  /* Animations */
+  .card.match-flash .card-front {
+    animation: matched-pop 0.4s ease;
+  }
+
+  @keyframes matched-pop {
+    0%   { transform: rotateY(180deg) scale(1); }
+    40%  { transform: rotateY(180deg) scale(1.06); }
+    100% { transform: rotateY(180deg) scale(1); }
+  }
+
+  .card.wrong-flash .card-front {
+    animation: shake 0.35s ease;
+  }
+
+  @keyframes shake {
+    0%,100% { transform: rotateY(180deg) translateX(0); }
+    25%      { transform: rotateY(180deg) translateX(-6px); }
+    75%      { transform: rotateY(180deg) translateX(6px); }
+  }
+
+  /* Button */
+  .controls {
+    margin-top: 24px;
+  }
+
+  .btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 11px 28px;
+    background: #2c2c2c;
+    color: #f5f0e8;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn:hover {
+    background: #444;
+    transform: translateY(-1px);
+  }
+
+  /* Win overlay */
+  .win-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(245,240,232,0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    gap: 12px;
+  }
+
+  .win-overlay.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .win-emoji {
+    font-size: 72px;
+    animation: bounce 0.6s ease infinite alternate;
+  }
+
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-12px); }
+  }
+
+  .win-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    color: #2c2c2c;
+  }
+
+  .win-stats {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .win-stats strong {
+    color: #2c2c2c;
+    font-weight: 600;
+  }
+
+  .win-overlay .btn {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .board { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    h1 { font-size: 38px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Memorama</h1>
+  <p class="subtitle">Encuentra los 6 pares de las obras </p>
+</header>
+
+<div class="hud">
+  <div class="hud-box">
+    <div class="hud-label">Intentos</div>
+    <div class="hud-value" id="attempts">0</div>
+  </div>
+  <div class="hud-box">
+    <div class="hud-label">Parejas</div>
+    <div class="hud-value" id="matched">0<span style="font-size:16px;color:#ccc">/6</span></div>
+</div>
+
+<div class="board" id="board"></div>
+
+<div class="controls">
+  <button class="btn" onclick="restartGame()">↺ Reiniciar</button>
+</div>
+
+<!-- Win screen -->
+<div class="win-overlay" id="winOverlay">
+  <div class="win-emoji">🎉</div>
+  <div class="win-title">¡Lo lograste!</div>
+  <div class="win-stats">
+
+    Intentos: <strong id="winAttempts">—</strong>
+  </div>
+  <button class="btn" onclick="restartGame()">Jugar de nuevo</button>
+</div>
+
+<script>
+
+  const CARD_DATA = [
+    { id: 1, emoji: '<img src="img1.jpeg" alt="IMAGEN 1">'},
+    { id: 2, emoji: '<img src="img2.jpeg" alt="IMAGEN 2">' },
+    { id: 3, emoji: '<img src="img3.jpeg" alt="IMAGEN 3">'  },
+    { id: 4, emoji: '<img src="img4.jpeg" alt="IMAGEN 4">' },
+    { id: 5, emoji: '<img src="img5.jpeg" alt="IMAGEN 5">'  },
+    { id: 6, emoji: '<img src="img6.jpeg" alt="IMAGEN 6">' }
+  ];
+
+  let flippedCards = [];
+  let matchedCount = 0;
+  let attempts = 0;
+  let locked = false;
+  let timerInterval = null;
+  let seconds = 0;
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function buildBoard() {
+    const board = document.getElementById('board');
+    board.innerHTML = '';
+    const deck = shuffle([...CARD_DATA, ...CARD_DATA]);
+
+    deck.forEach((data, i) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.id = data.id;
+      card.style.animationDelay = `${i * 0.05}s`;
+
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="card-face card-back">
+            <span class="back-icon">✦</span>
+          </div>
+          <div class="card-face card-front">
+            <span class="card-emoji">${data.emoji}</span>
+          </div>
+        </div>
+      `;
+
+      card.addEventListener('click', () => onCardClick(card));
+      board.appendChild(card);
+    });
+  }
+
+  function onCardClick(card) {
+    if (locked || card.classList.contains('flipped') || card.classList.contains('matched')) return;
+    if (flippedCards.length === 2) return;
+
+    card.classList.add('flipped');
+    flippedCards.push(card);
+
+    if (flippedCards.length < 2) return;
+
+    locked = true;
+    attempts++;
+    setHUD('attempts', attempts);
+
+    const [a, b] = flippedCards;
+
+    if (a.dataset.id === b.dataset.id) {
+      matchedCount++;
+      setHUD('matched', matchedCount);
+      a.classList.add('matched', 'match-flash');
+      b.classList.add('matched', 'match-flash');
+      flippedCards = [];
+      locked = false;
+      if (matchedCount === CARD_DATA.length) {
+        clearInterval(timerInterval);
+        setTimeout(showWin, 500);
+      }
+    } else {
+      setTimeout(() => {
+        a.classList.add('wrong-flash');
+        b.classList.add('wrong-flash');
+        setTimeout(() => {
+          a.classList.remove('flipped', 'wrong-flash');
+          b.classList.remove('flipped', 'wrong-flash');
+          flippedCards = [];
+          locked = false;
+        }, 350);
+      }, 750);
+    }
+  }
+
+  function setHUD(id, value) {
+    const el = document.getElementById(id);
+    if (id === 'matched') {
+      el.innerHTML = `${value}<span style="font-size:16px;color:#ccc">/6</span>`;
+    } else {
+      el.textContent = value;
+    }
+  }
+
+  function showWin() {
+    document.getElementById('winTime').textContent = formatTime(seconds);
+    document.getElementById('winAttempts').textContent = attempts;
+    document.getElementById('winOverlay').classList.add('show');
+  }
+
+  function restartGame() {
+    document.getElementById('winOverlay').classList.remove('show');
+    flippedCards = [];
+    matchedCount = 0;
+    attempts = 0;
+    locked = false;
+    setHUD('attempts', 0);
+    setHUD('matched', 0);
+    buildBoard();
+    startTimer();
+  }
+
+  buildBoard();
+  startTimer();
+</script>
+</body>
+</html>
